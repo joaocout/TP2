@@ -1,17 +1,19 @@
-package kwic;
+package kwic.base;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Input {
+import kwic.interfaces.Input;
+
+public class BaseInput implements Input {
 	
 	private String file_name;
 	private ArrayList<String> lines;
 	private FileReader file;
 	private BufferedReader buff;
 	
-	public Input(String _file_name) {
+	public BaseInput(String _file_name) {
 		this.file_name = _file_name;
 		lines = new ArrayList<String>();
 	}

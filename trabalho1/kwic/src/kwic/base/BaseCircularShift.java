@@ -1,23 +1,24 @@
-package kwic;
+package kwic.base;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import kwic.interfaces.CircularShift;
 
-public class CircularShift {
+public class BaseCircularShift implements CircularShift {
 		
 		private ArrayList<String> lines;
 		//lista de listas, separando cada palavra de cada linha
 		private ArrayList<ArrayList<String>> words;
 		private ArrayList<ArrayList<String>> shifted_words;
 		
-		public CircularShift(ArrayList<String> _lines) {
+		public BaseCircularShift(ArrayList<String> _lines) {
 			shifted_words = new ArrayList<ArrayList<String>>();
 			words = new ArrayList<ArrayList<String>>();
 			this.lines = _lines;
 		}
 		
 		//retorna uma matriz com todas as palavras do texto
-		public ArrayList<ArrayList<String>> getWords(){
+		private ArrayList<ArrayList<String>> getWords(){
 			
 			for(String line : lines) {
 				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(line.split(" ")));
