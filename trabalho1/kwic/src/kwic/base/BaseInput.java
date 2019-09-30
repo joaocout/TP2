@@ -37,6 +37,8 @@ public class BaseInput implements Input {
 				lines.add(line);
 				line = buff.readLine();
 			}
+			
+			buff.close();
 		}
 		catch (Exception e) {
 			System.err.printf("Error reading '%s'\n", file_name);
