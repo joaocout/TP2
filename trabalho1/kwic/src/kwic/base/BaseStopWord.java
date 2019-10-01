@@ -47,6 +47,6 @@ public class BaseStopWord implements StopWord {
 	}
 	
 	public boolean isStopWord(String str) {
-		return this.swlist.contains(str.toLowerCase());
+		return (this.swlist.contains(str.toLowerCase()));
 	}
 }

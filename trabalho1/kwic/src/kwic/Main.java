@@ -7,27 +7,23 @@ import kwic.dblp.*;
 public class Main {
 
 	public static void main(String[] args) {
+		/*
 		Input in = new BaseInput("input.txt");
 		//Input in = new DBLPInput();
 
-		StopWord bs = new BaseStopWord();
-
-		CircularShift cs = new BaseCircularShift(bs.getAllLines(in.getLines()));
+		CircularShift cs = new BaseCircularShift(in.getLines());
 
 		Alphabetizing al = new BaseAlphabetizing(cs.getShiftedWords());
-		/*
-		for (String linha : al.getAlphabetizedArray()) {
-			System.out.println(linha.toString());
-		}*/
-		
+
 		Output bo = new BaseOutput(al.getAlphabetizedArray());
-		bo.run();
-		
+		bo.run();		
 		
 		/**
 		 * FAZER FACTORY PRA CRIAR ISSO TUDO COM BASE/DBLP/OUTPUT CUSTOM
 		 * 
 		 */
+		int mode = 1;
+		KwicFactory kf = new KwicFactory(mode);
 	}
 
 }

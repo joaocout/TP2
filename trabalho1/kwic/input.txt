@@ -3,7 +3,7 @@ Parametric DeltaJ 1.5: Propagating Feature Attributes into Implementation Artifa
 On type checking Delta-Oriented product lines
 Refactoring Delta-Oriented Product Lines to achieve Monotonicity
 Delta-Oriented FSM-Based Testing
-Delta-oriented test case prioritization for integration testing ofsoftware product lines
+Delta-oriented test case prioritization for integration testing of software product lines
 Towards incremental model slicing for delta-oriented software product lines
 Delta-oriented model-based integration testing of large-scale systems
 Deployment Variability in Delta-Oriented Models

@@ -24,6 +24,7 @@ public class DBLPInput implements Input {
 			System.out.println("Insira o criterio de busca (autor, titulo, etc): ");
 			Scanner sc = new Scanner(System.in);
 			String query = sc.nextLine();
+			query = query.replace(" ", "%20");
 			sc.close();
 			
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
@@ -46,19 +47,9 @@ public class DBLPInput implements Input {
 		}
 	}
 	
-	private ArrayList<ArrayList<String>> getWords(){
-		ArrayList<ArrayList<String>> words = new ArrayList<ArrayList<String>>();
-		for(String line : lines) {
-			ArrayList<String> temp = new ArrayList<String>(Arrays.asList(line.split(" ")));
-			words.add(temp);
-		}
-		
-		return words;
-	}
-	
 	@Override
-	public ArrayList<ArrayList<String>> getLines() {
-		return this.getWords();
+	public ArrayList<String> getLines() {
+		return this.lines;
 	}
 
 }

@@ -1,12 +1,8 @@
 package kwic.base;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.FileReader;
-
 import kwic.interfaces.Input;
-
 public class BaseInput implements Input {
 	
 	private String file_name;
@@ -27,17 +23,7 @@ public class BaseInput implements Input {
 		this.file_name = _file_name;
 	}
 	
-	private ArrayList<ArrayList<String>> getWords(){
-		ArrayList<ArrayList<String>> words = new ArrayList<ArrayList<String>>();
-		for(String line : lines) {
-			ArrayList<String> temp = new ArrayList<String>(Arrays.asList(line.split(" ")));
-			words.add(temp);
-		}
-		
-		return words;
-	}
-	
-	public ArrayList<ArrayList<String>> getLines() {	
+	public ArrayList<String> getLines() {	
 		
 		try {
 			file = new FileReader(file_name);
@@ -45,10 +31,10 @@ public class BaseInput implements Input {
 			
 			String line = buff.readLine();
 			while(line!=null) {
-				lines.add(line);
+				lines.add(line + " /");
 				line = buff.readLine();
 			}
-			
+
 			buff.close();
 		}
 		catch (Exception e) {
@@ -56,7 +42,7 @@ public class BaseInput implements Input {
 			e.printStackTrace();
 		}
 		
-		return this.getWords();
+		return lines;
 	}
 	
 	
