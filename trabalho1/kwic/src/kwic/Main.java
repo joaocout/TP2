@@ -1,28 +1,25 @@
 package kwic;
 
-
-import java.util.ArrayList;
-
-import kwic.base.BaseCircularShift;
-import kwic.base.BaseInput;
-import kwic.dblp.DBLPInput;
+import kwic.base.*;
 import kwic.interfaces.*;
+import kwic.dblp.*;
 
 public class Main {
 
 	
 	public static void main(String[] args) {
 		
-		//Input in = new BaseInput("input.txt");
-		Input in = new DBLPInput();
+		Input in = new BaseInput("input.txt");
+		//Input in = new DBLPInput();
 		
 		CircularShift cs = new BaseCircularShift(in.getLines());
-		ArrayList<ArrayList<String>> a = cs.getShiftedWords();
-		for(ArrayList<String> array : a) {
-			System.out.println(array);
+		
+		BaseAlphabetizing al = new BaseAlphabetizing(cs.getShiftedWords());
+		
+		for(String linha : al.getAlphabetizedArray()) {
+			System.out.println(linha);
 		}
 		
 	}
-	
-	
+
 }

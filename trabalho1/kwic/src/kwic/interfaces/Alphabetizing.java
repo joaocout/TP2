@@ -1,5 +1,9 @@
 package kwic.interfaces;
 
-public interface Alphabetizing {
+import java.util.ArrayList;
 
+public interface Alphabetizing {
+	
+	public ArrayList<String> getAlphabetizedArray();
+	
 }

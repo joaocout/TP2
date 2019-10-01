@@ -28,7 +28,8 @@ public class BaseCircularShift implements CircularShift {
 			return words;
 		}
 		
-		// retorna uma lista, com todos os circular shifts possiveis, armazenados em listas
+		// retorna uma lista, com todos os circular shifts possiveis,
+		// com as palavras armazenadas em listas
 		public ArrayList<ArrayList<String>> getShiftedWords(){
 			
 			ArrayList<ArrayList<String>> temp = this.getWords();
@@ -46,8 +47,6 @@ public class BaseCircularShift implements CircularShift {
 				}
 				
 			}
-			
 			return shifted_words;
 		}
-		
 }
