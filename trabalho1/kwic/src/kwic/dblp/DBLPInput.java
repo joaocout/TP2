@@ -34,7 +34,7 @@ public class DBLPInput implements Input {
 				// remove o ponto final (caso tenha)
 				String r = n.getTextContent();
 				if(r.substring(r.length() - 1).equals(".")) {
-					r = r.substring(0, r.length() - 2);
+					r = r.substring(0, r.length() - 1);
 				}
 				lines.add(r);
 			}
