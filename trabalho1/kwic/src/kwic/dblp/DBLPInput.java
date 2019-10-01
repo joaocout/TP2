@@ -1,6 +1,7 @@
 package kwic.dblp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -45,9 +46,19 @@ public class DBLPInput implements Input {
 		}
 	}
 	
+	private ArrayList<ArrayList<String>> getWords(){
+		ArrayList<ArrayList<String>> words = new ArrayList<ArrayList<String>>();
+		for(String line : lines) {
+			ArrayList<String> temp = new ArrayList<String>(Arrays.asList(line.split(" ")));
+			words.add(temp);
+		}
+		
+		return words;
+	}
+	
 	@Override
-	public ArrayList<String> getLines() {
-		return this.lines;
+	public ArrayList<ArrayList<String>> getLines() {
+		return this.getWords();
 	}
 
 }

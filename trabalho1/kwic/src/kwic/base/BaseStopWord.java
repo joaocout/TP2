@@ -28,17 +28,25 @@ public class BaseStopWord implements StopWord {
 		}
 	}
 	
-	public ArrayList<String> getNoSWLine(ArrayList<String> line) {
+	public ArrayList<String> getLine(ArrayList<String> line) {
 		ArrayList<String> ret = new ArrayList<String>();
 		for(String l : line) {
-			if(!swlist.contains(l))
+			if(!this.isStopWord(l))
 				ret.add(l);
 		}
 		
 		return ret;
 	}
 	
+	public ArrayList<ArrayList<String>> getAllLines(ArrayList<ArrayList<String>> lines) {
+		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
+		for(ArrayList<String> l1 : lines) {
+			res.add(this.getLine(l1));
+		}
+		return res;
+	}
+	
 	public boolean isStopWord(String str) {
-		return this.swlist.contains(str);
+		return this.swlist.contains(str.toLowerCase());
 	}
 }

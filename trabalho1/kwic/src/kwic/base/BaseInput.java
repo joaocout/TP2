@@ -1,6 +1,7 @@
 package kwic.base;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -26,7 +27,17 @@ public class BaseInput implements Input {
 		this.file_name = _file_name;
 	}
 	
-	public ArrayList<String> getLines() {	
+	private ArrayList<ArrayList<String>> getWords(){
+		ArrayList<ArrayList<String>> words = new ArrayList<ArrayList<String>>();
+		for(String line : lines) {
+			ArrayList<String> temp = new ArrayList<String>(Arrays.asList(line.split(" ")));
+			words.add(temp);
+		}
+		
+		return words;
+	}
+	
+	public ArrayList<ArrayList<String>> getLines() {	
 		
 		try {
 			file = new FileReader(file_name);
@@ -45,7 +56,7 @@ public class BaseInput implements Input {
 			e.printStackTrace();
 		}
 		
-		return lines;
+		return this.getWords();
 	}
 	
 	
