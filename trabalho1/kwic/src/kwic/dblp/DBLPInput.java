@@ -1,11 +1,5 @@
-package kwic.base;
+package kwic.dblp;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +7,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -30,6 +23,7 @@ public class DBLPInput implements Input {
 			System.out.println("Insira o criterio de busca (autor, titulo, etc): ");
 			Scanner sc = new Scanner(System.in);
 			String query = sc.nextLine();
+			sc.close();
 			
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			
@@ -53,8 +47,7 @@ public class DBLPInput implements Input {
 	
 	@Override
 	public ArrayList<String> getLines() {
-		// TODO Auto-generated method stub
-		return lines;
+		return this.lines;
 	}
 
 }

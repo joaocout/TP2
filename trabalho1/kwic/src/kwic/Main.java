@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import kwic.base.BaseCircularShift;
 import kwic.base.BaseInput;
-import kwic.base.DBLPInput;
+import kwic.dblp.DBLPInput;
 import kwic.interfaces.*;
 
 public class Main {
