@@ -22,8 +22,8 @@ public class Main {
 		 * FAZER FACTORY PRA CRIAR ISSO TUDO COM BASE/DBLP/OUTPUT CUSTOM
 		 * 
 		 */
-		int mode = 1;
-		KwicFactory kf = new KwicFactory(mode);
+		int mode = 2;
+		new KwicFactory(mode);
 	}
 
 }

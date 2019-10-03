@@ -14,13 +14,13 @@ public class BaseKwic extends Kwic {
 	}
 
 	@Override
-	Input getinput() {
+	public Input getinput() {
 		Input in = new BaseInput("input.txt");
 		return in;
 	}
 
 	@Override
-	Output getoutput(ArrayList<String> arr) {
+	public Output getoutput(ArrayList<String> arr) {
 		Output out = new BaseOutput(arr);
 		return out;
 	}

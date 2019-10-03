@@ -12,14 +12,15 @@ public class DBLPBaseKwic extends Kwic {
 	public DBLPBaseKwic() {
 		super();
 	}
+	
 	@Override
-	Input getinput() {
+	public Input getinput() {
 		Input in = new DBLPInput();
 		return in;
 	}
 
 	@Override
-	Output getoutput(ArrayList<String> arr) {
+	public Output getoutput(ArrayList<String> arr) {
 		Output out = new BaseOutput(arr);
 		return out;
 	}

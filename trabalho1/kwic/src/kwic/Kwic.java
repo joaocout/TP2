@@ -18,6 +18,6 @@ public abstract class Kwic {
 		bo.run();
 	}
 	
-	abstract Input getinput();
-	abstract Output getoutput(ArrayList<String> arr);
+	public abstract Input getinput();
+	public abstract Output getoutput(ArrayList<String> arr);
 }
