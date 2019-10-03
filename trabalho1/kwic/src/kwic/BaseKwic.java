@@ -8,9 +8,9 @@ import kwic.interfaces.Input;
 import kwic.interfaces.Output;
 
 public class BaseKwic extends Kwic {
+	
 	public BaseKwic() {
-		super();
-		
+		super();		
 	}
 
 	@Override

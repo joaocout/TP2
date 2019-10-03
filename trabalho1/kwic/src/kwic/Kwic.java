@@ -10,6 +10,7 @@ import kwic.interfaces.Input;
 import kwic.interfaces.Output;
 
 public abstract class Kwic {
+	
 	public Kwic() {
 		Input in = getinput();
 		CircularShift cs = new BaseCircularShift(in.getLines());
@@ -20,4 +21,5 @@ public abstract class Kwic {
 	
 	public abstract Input getinput();
 	public abstract Output getoutput(ArrayList<String> arr);
+	
 }

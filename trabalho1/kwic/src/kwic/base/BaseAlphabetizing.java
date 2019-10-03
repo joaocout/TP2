@@ -3,6 +3,7 @@ package kwic.base;
 import kwic.interfaces.Alphabetizing;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class BaseAlphabetizing implements Alphabetizing {
 
@@ -34,7 +35,14 @@ public class BaseAlphabetizing implements Alphabetizing {
 
 		ArrayList<String> temp = this.getNewShiftedWords();
 
-		Collections.sort(temp);
+		Collections.sort(temp, new Comparator<Object>() {
+			@Override
+			public int compare(Object a, Object b) {
+				String aa = (String) a;
+				String bb = (String) b;
+				return aa.toLowerCase().compareTo(bb.toLowerCase());
+			}
+		});
 
 		return temp;
 

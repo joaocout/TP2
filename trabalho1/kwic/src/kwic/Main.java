@@ -1,5 +1,7 @@
 package kwic;
 
+import java.util.Scanner;
+
 import kwic.base.*;
 import kwic.interfaces.*;
 import kwic.dblp.*;
@@ -7,23 +9,14 @@ import kwic.dblp.*;
 public class Main {
 
 	public static void main(String[] args) {
-		/*
-		Input in = new BaseInput("input.txt");
-		//Input in = new DBLPInput();
-
-		CircularShift cs = new BaseCircularShift(in.getLines());
-
-		Alphabetizing al = new BaseAlphabetizing(cs.getShiftedWords());
-
-		Output bo = new BaseOutput(al.getAlphabetizedArray());
-		bo.run();		
-		
-		/**
-		 * FAZER FACTORY PRA CRIAR ISSO TUDO COM BASE/DBLP/OUTPUT CUSTOM
-		 * 
-		 */
-		int mode = 2;
+		int mode;
+		System.out.println("Insira o método de busca:");
+		System.out.println("1 - Arquivo texto");
+		System.out.println("2 - Busca DBLP");
+		Scanner sc = new Scanner(System.in);
+		mode = sc.nextInt();
 		new KwicFactory(mode);
+		sc.close();
 	}
 
 }
