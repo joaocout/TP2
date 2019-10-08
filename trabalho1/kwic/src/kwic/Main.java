@@ -9,14 +9,12 @@ import kwic.dblp.*;
 public class Main {
 
 	public static void main(String[] args) {
-		int mode;
-		System.out.println("Insira o método de busca:");
-		System.out.println("1 - Arquivo texto");
-		System.out.println("2 - Busca DBLP");
-		Scanner sc = new Scanner(System.in);
-		mode = sc.nextInt();
-		new KwicFactory(mode);
-		sc.close();
+		//Input in = new DBLPInput();
+		Input in = new BaseInput("input.txt");
+		CircularShift cs = new BaseCircularShift(in.getLines());
+		Alphabetizing al = new BaseAlphabetizing(cs.getShiftedWords());
+		Output bo = new BaseOutput(al.getAlphabetizedArray());
+		bo.run();
 	}
 
 }

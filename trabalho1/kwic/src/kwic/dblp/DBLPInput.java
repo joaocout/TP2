@@ -18,9 +18,12 @@ public class DBLPInput implements Input {
 
 	ArrayList<String> lines;
 	public DBLPInput() {
+		this.lines = new ArrayList<String>();
+	}
+	
+	@Override
+	public ArrayList<String> getLines() {
 		try {
-			lines = new ArrayList<String>();
-			
 			System.out.println("Insira o criterio de busca (autor, titulo, etc): ");
 			Scanner sc = new Scanner(System.in);
 			String query = sc.nextLine();
@@ -45,10 +48,7 @@ public class DBLPInput implements Input {
 			System.err.printf("Erro ao buscar utilizando o criterio desejado.");
 			e.printStackTrace();
 		}
-	}
-	
-	@Override
-	public ArrayList<String> getLines() {
+		
 		return this.lines;
 	}
 

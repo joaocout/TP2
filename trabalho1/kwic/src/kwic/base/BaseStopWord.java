@@ -11,11 +11,15 @@ public class BaseStopWord implements StopWord {
 	ArrayList<String> swlist;
 	public BaseStopWord() {
 		this.swlist = new ArrayList<String>();
+	}
+	
+	private void getFromFile() {
 		try {
 			FileReader file = new FileReader("stop_words.txt");
 			BufferedReader buff = new BufferedReader(file);
 			
 			String line = buff.readLine();
+			swlist.clear();
 			while(line!=null) {
 				swlist.add(line);
 				line = buff.readLine();
@@ -27,8 +31,8 @@ public class BaseStopWord implements StopWord {
 			e.printStackTrace();
 		}
 	}
-	
 	public ArrayList<String> getLine(ArrayList<String> line) {
+		this.getFromFile();
 		ArrayList<String> ret = new ArrayList<String>();
 		for(String l : line) {
 			if(!this.isStopWord(l))
@@ -39,6 +43,7 @@ public class BaseStopWord implements StopWord {
 	}
 	
 	public ArrayList<ArrayList<String>> getAllLines(ArrayList<ArrayList<String>> lines) {
+		this.getFromFile();
 		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
 		for(ArrayList<String> l1 : lines) {
 			res.add(this.getLine(l1));
