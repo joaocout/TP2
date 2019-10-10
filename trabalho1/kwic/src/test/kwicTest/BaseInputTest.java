@@ -1,8 +1,7 @@
 package kwicTest;
 
+import static org.junit.Assert.*;
 import org.junit.*;
-import org.junit.Assert.*;
-
 import kwic.base.BaseInput;
 
 public class BaseInputTest {
@@ -12,7 +11,7 @@ public class BaseInputTest {
 		BaseInput in = new BaseInput("input.txt");
 		int size = in.getLines().size();
 		
-		Assert.assertEquals(54, size);
+		assertEquals(54, size);
 	}
 	
 	@Test
@@ -20,7 +19,7 @@ public class BaseInputTest {
 		String filen = "input.txt";
 		BaseInput in = new BaseInput(filen);
 		
-		Assert.assertEquals(filen, in.getFileName());
+		assertEquals(filen, in.getFileName());
 	}
 
 	

@@ -1,9 +1,6 @@
 package kwic;
 
-import kwic.base.*;
 import kwic.interfaces.*;
-import kwic.dblp.*;
-import kwic.html.*;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

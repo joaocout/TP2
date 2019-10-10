@@ -53,6 +53,8 @@ public class BaseStopWord implements StopWord {
 	}
 	
 	public boolean isStopWord(String str) {
+		if(this.swlist.size() == 0)
+			this.getFromFile();
 		return (this.swlist.contains(str.toLowerCase()));
 	}
 }

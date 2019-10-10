@@ -58,13 +58,14 @@ public class BaseCircularShift implements CircularShift {
 
 		for (ArrayList<String> line : temp) {
 			ArrayList<String> origline = new ArrayList<String>(line);
-			origline.remove(origline.size()-1);
+			//origline.remove(origline.size()-1);
 			shifted_words.add(origline);
 			int size = line.size() - 1;
 			for (int i = 0; i < size; i++) {
 				String aux = line.get(0);
 				line.remove(0);
 				line.add(aux);
+				@SuppressWarnings("resource")
 				ApplicationContext context = new ClassPathXmlApplicationContext("file:Beans.xml");
 				StopWord sw = (StopWord) context.getBean("stopword");
 				if (!(sw.isStopWord(line.get(0))) && !line.get(0).equals("/")) {
@@ -83,13 +84,14 @@ public class BaseCircularShift implements CircularShift {
 		this.shifted_words.clear();
 		for (ArrayList<String> line : temp) {
 			ArrayList<String> origline = new ArrayList<String>(line);
-			origline.remove(origline.size()-1);
+			//origline.remove(origline.size()-1);
 			shifted_words.add(origline);
 			int size = line.size() - 1;
 			for (int i = 0; i < size; i++) {
 				String aux = line.get(0);
 				line.remove(0);
 				line.add(aux);
+				@SuppressWarnings("resource")
 				ApplicationContext context = new ClassPathXmlApplicationContext("file:Beans.xml");
 				StopWord sw = (StopWord) context.getBean("stopword");
 				if (!(sw.isStopWord(line.get(0))) && !line.get(0).equals("/")) {

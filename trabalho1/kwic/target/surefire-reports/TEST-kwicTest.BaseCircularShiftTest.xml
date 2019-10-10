@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="kwicTest.BaseStopWordTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="kwicTest.BaseCircularShiftTest" time="1.356" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.4+11-post-Ubuntu-1ubuntu218.04.3"/>
@@ -59,18 +59,15 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testGetLineSize" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testGetAllLines" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testGetLine" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testGetAllLinesSize" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord1" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord2" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord3" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord4" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord5" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord6" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord7" time="0.001"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord8" time="0"/>
-  <testcase classname="kwicTest.BaseStopWordTest" name="testIsStopWord9" time="0"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords1" time="0.628"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords2" time="0.118"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords3" time="0.108"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords4" time="0.096"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords5" time="0.078"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords6" time="0.069"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords7" time="0.063"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords8" time="0.054"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWordsArg1" time="0.055"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWords" time="0.045"/>
+  <testcase classname="kwicTest.BaseCircularShiftTest" name="testGetShiftedWordsArg" time="0.042"/>
 </testsuite>
