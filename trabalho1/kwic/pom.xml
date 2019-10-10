@@ -19,6 +19,11 @@
         <version>3.8.0</version>
         <configuration>
           <release>11</release>
+          <archive>
+          	<manifest>
+          		<mainClass>kwic.Main</mainClass>
+          	</manifest>
+          </archive>
         </configuration>
       </plugin>
     </plugins>
