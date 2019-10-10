@@ -2,11 +2,11 @@ package epl;
 
 import epl.interfaces.*;
 
-public class Add implements Expression, Visitable {
+public class Div implements Expression, Visitable{
+
+private Expression left, right;
 	
-	private Expression left, right;
-	
-	public Add(Expression left, Expression right) {
+	public Div(Expression left, Expression right) {
 		this.left = left;
 		this.right = right;
 	}
@@ -15,7 +15,7 @@ public class Add implements Expression, Visitable {
 	public void print() {
 		System.out.print("(");
 		this.left.print();
-		System.out.print(" + ");
+		System.out.print(" / ");
 		this.right.print();
 		System.out.print(")");
 	}
@@ -32,5 +32,5 @@ public class Add implements Expression, Visitable {
 	public Expression getRight() {
 		return right;
 	}
-
+	
 }

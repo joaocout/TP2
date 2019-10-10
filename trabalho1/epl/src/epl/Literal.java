@@ -1,10 +1,10 @@
 package epl;
 
-import epl.interfaces.Expression;
+import epl.interfaces.*;
 
-public class Literal implements Expression {
+public class Literal implements Expression,Visitable {
 	
-	int val;
+	private int val;
 	
 	public Literal(int val) {
 		this.val = val;
@@ -13,6 +13,15 @@ public class Literal implements Expression {
 	@Override
 	public void print() {
 		System.out.print(this.val);
+	}
+	
+	@Override
+	public void accept(Visitor v) {
+		v.visit(this);
+	}
+	
+	public int getVal() {
+		return val;
 	}
 
 }
