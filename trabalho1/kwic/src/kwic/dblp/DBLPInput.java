@@ -17,22 +17,19 @@ import kwic.interfaces.Input;
 public class DBLPInput implements Input {
 
 	ArrayList<String> lines;
-	public DBLPInput() {
+	String query;
+	
+	public DBLPInput(String name) {
 		this.lines = new ArrayList<String>();
+		this.query = name.replace(" ", "%20");
 	}
 	
 	@Override
 	public ArrayList<String> getLines() {
 		try {
-			System.out.println("Insira o criterio de busca (autor, titulo, etc): ");
-			Scanner sc = new Scanner(System.in);
-			String query = sc.nextLine();
-			query = query.replace(" ", "%20");
-			sc.close();
-			
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			
-			Document doc = builder.parse("https://dblp.org/search/publ/api?format=xml&q=" + query);
+			Document doc = builder.parse("https://dblp.org/search/publ/api?format=xml&q=" + this.query);
 			NodeList nl = doc.getElementsByTagName("title");
 			for(int i=0; i < nl.getLength(); i++) {
 				Node n = nl.item(i);

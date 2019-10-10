@@ -5,4 +5,7 @@ module kwic {
 	exports kwic.interfaces;
 
 	requires java.xml;
+	requires spring.core;
+	requires spring.context;
+	requires spring.beans;
 }

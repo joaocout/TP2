@@ -1,0 +1,14 @@
+kwic/interfaces/CircularShift.class
+kwic/base/BaseAlphabetizing.class
+kwic/Main.class
+kwic/interfaces/Output.class
+kwic/base/BaseOutput.class
+kwic/base/BaseInput.class
+kwic/interfaces/Alphabetizing.class
+kwic/base/BaseCircularShift.class
+kwic/interfaces/Input.class
+kwic/base/BaseStopWord.class
+kwic/dblp/DBLPInput.class
+module-info.class
+kwic/base/BaseAlphabetizing$1.class
+kwic/interfaces/StopWord.class
