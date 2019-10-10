@@ -10,8 +10,9 @@ public class BaseInput implements Input {
 	private FileReader file;
 	private BufferedReader buff;
 	
-	public BaseInput(String _file_name) {
-		this.file_name = _file_name;
+	
+	public BaseInput(String name) {
+		this.file_name = name;
 		lines = new ArrayList<String>();
 	}
 	
