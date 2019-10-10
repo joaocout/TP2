@@ -14,7 +14,6 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("file:Beans.xml");
 		Input in = (Input) context.getBean("input");
-		
 		//Input in = new DBLPInput();
 		//Input in = new BaseInput("input.txt");
 		CircularShift cs = new BaseCircularShift(in.getLines());

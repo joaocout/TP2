@@ -9,7 +9,7 @@ public class BaseInput implements Input {
 	private ArrayList<String> lines;
 	private FileReader file;
 	private BufferedReader buff;
-	
+
 	public BaseInput(String name) {
 		this.file_name = name;
 		lines = new ArrayList<String>();
