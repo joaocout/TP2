@@ -1,8 +1,9 @@
 module kwic {
 	exports kwic.dblp;
 	exports kwic.base;
-	exports kwic;
+	exports kwic.html;
 	exports kwic.interfaces;
+	exports kwic;
 
 	requires java.xml;
 	requires spring.core;

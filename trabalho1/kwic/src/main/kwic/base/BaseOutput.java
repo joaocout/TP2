@@ -6,14 +6,10 @@ import kwic.interfaces.Output;
 
 public class BaseOutput implements Output{
 	
-	private ArrayList<String> lines;
+	public BaseOutput() { }
 	
-	public BaseOutput(ArrayList<String> lines) {
-		this.lines = lines;
-	}
-	
-	public void run() {
-		for (String linha : this.lines) {
+	public void run(ArrayList<String> lines) {
+		for (String linha : lines) {
 			System.out.println(linha.toString());
 		}
 	}

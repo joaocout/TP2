@@ -1,8 +1,10 @@
 package kwic.base;
 import java.util.ArrayList;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import kwic.interfaces.Input;
+
 public class BaseInput implements Input {
 	
 	private String file_name;

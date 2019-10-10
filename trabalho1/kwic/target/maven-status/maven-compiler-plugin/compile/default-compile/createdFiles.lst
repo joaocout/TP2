@@ -6,7 +6,9 @@ kwic/base/BaseOutput.class
 kwic/base/BaseInput.class
 kwic/interfaces/Alphabetizing.class
 kwic/base/BaseCircularShift.class
+kwic/html/HTMLOutput.class
 kwic/interfaces/Input.class
+kwic/base/BaseAlphabetizing$2.class
 kwic/base/BaseStopWord.class
 kwic/dblp/DBLPInput.class
 module-info.class

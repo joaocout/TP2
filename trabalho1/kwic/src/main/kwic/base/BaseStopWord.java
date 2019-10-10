@@ -31,6 +31,7 @@ public class BaseStopWord implements StopWord {
 			e.printStackTrace();
 		}
 	}
+	
 	public ArrayList<String> getLine(ArrayList<String> line) {
 		this.getFromFile();
 		ArrayList<String> ret = new ArrayList<String>();
