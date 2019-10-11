@@ -1,2 +1,5 @@
+kwicTest/HTMLOutputTest.class
 kwicTest/BaseStopWordTest.class
+kwicTest/BaseAlphabetizingTest.class
 kwicTest/BaseInputTest.class
+kwicTest/BaseCircularShiftTest.class

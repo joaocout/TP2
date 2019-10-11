@@ -1,22 +1,20 @@
-package test;
+package eplTest;
 
 import epl.*;
 import org.junit.*;
 
+public class subTest {
 
-//o metodo eval utiliza quase tds os metodos da classe
-public class addTest {
-	
 	@Test
 	public void eval1Test() {
 		
 		Literal a = new Literal(10);
 		Literal b = new Literal(15);
-		Add c = new Add(a, b);
+		Sub c = new Sub(a, b);
 		
 		EvalVisitor ev = new EvalVisitor();
 		c.accept(ev);
-		Assert.assertEquals(25, ev.eval());
+		Assert.assertEquals(-5, ev.eval());
 	}
 	
 	@Test
@@ -24,13 +22,14 @@ public class addTest {
 		
 		Literal a = new Literal(10);
 		Literal b = new Literal(15);
-		Add c = new Add(a, b);
+		Sub c = new Sub(a, b);
 		
 		Literal aa = new Literal(7);
-		Add d = new Add(c, aa);
+		Sub d = new Sub(c, aa);
 		EvalVisitor ev = new EvalVisitor();
 		d.accept(ev);
-		Assert.assertEquals(32, ev.eval());
+		Assert.assertEquals(-12, ev.eval());
 	}
+	
 	
 }

@@ -1,20 +1,24 @@
-package test;
+package eplTest;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
 import epl.*;
-import org.junit.*;
+import epl.interfaces.*;
 
-public class subTest {
 
+//o metodo eval utiliza quase tds os metodos da classe
+public class addTest {
+	
 	@Test
 	public void eval1Test() {
 		
 		Literal a = new Literal(10);
 		Literal b = new Literal(15);
-		Sub c = new Sub(a, b);
+		Add c = new Add(a, b);
 		
 		EvalVisitor ev = new EvalVisitor();
 		c.accept(ev);
-		Assert.assertEquals(-5, ev.eval());
+		assertEquals(25, ev.eval());
 	}
 	
 	@Test
@@ -22,14 +26,13 @@ public class subTest {
 		
 		Literal a = new Literal(10);
 		Literal b = new Literal(15);
-		Sub c = new Sub(a, b);
+		Add c = new Add(a, b);
 		
 		Literal aa = new Literal(7);
-		Sub d = new Sub(c, aa);
+		Add d = new Add(c, aa);
 		EvalVisitor ev = new EvalVisitor();
 		d.accept(ev);
-		Assert.assertEquals(-12, ev.eval());
+		assertEquals(32, ev.eval());
 	}
-	
 	
 }

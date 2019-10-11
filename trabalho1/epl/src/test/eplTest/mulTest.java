@@ -1,34 +1,34 @@
-package test;
+package eplTest;
 
 import org.junit.*;
 import epl.*;
 
-public class divTest {
+public class mulTest {
 
 	@Test
 	public void eval1Test() {
 		
 		Literal a = new Literal(10);
-		Literal b = new Literal(2);
-		Div c = new Div(a, b);
+		Literal b = new Literal(15);
+		Mul c = new Mul(a, b);
 		
 		EvalVisitor ev = new EvalVisitor();
 		c.accept(ev);
-		Assert.assertEquals(5, ev.eval());
+		Assert.assertEquals(150, ev.eval());
 	}
 	
 	@Test
 	public void eval2Test() {
 		
-		Literal a = new Literal(42);
-		Literal b = new Literal(6);
-		Add c = new Add(a, b);
+		Literal a = new Literal(10);
+		Literal b = new Literal(15);
+		Mul c = new Mul(a, b);
 		
 		Literal aa = new Literal(7);
-		Add d = new Add(c, aa);
+		Mul d = new Mul(c, aa);
 		EvalVisitor ev = new EvalVisitor();
 		d.accept(ev);
-		Assert.assertEquals(1, ev.eval());
+		Assert.assertEquals(1050, ev.eval());
 	}
 	
 }
