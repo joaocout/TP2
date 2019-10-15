@@ -11,11 +11,6 @@ public class Literal implements Expression,Visitable {
 	}
 	
 	@Override
-	public void print() {
-		System.out.print(this.val);
-	}
-	
-	@Override
 	public void accept(Visitor v) {
 		v.visit(this);
 	}

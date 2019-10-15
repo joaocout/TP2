@@ -14,16 +14,6 @@ public class Sub implements Expression, Visitable{
 	@Override
 	public void accept(Visitor v) {
 		v.visit(this);
-		
-	}
-
-	@Override
-	public void print() {
-		System.out.print("(");
-		this.left.print();
-		System.out.print(" - ");
-		this.right.print();
-		System.out.print(")");
 	}
 	
 	public Expression getLeft() {

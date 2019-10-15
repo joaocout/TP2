@@ -12,15 +12,6 @@ public class Mul implements Expression, Visitable{
 	}
 	
 	@Override
-	public void print() {
-		System.out.print("(");
-		this.left.print();
-		System.out.print(" * ");
-		this.right.print();
-		System.out.print(")");
-	}
-	
-	@Override
 	public void accept(Visitor v) {
 		v.visit(this);
 	}
