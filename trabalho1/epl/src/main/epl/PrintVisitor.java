@@ -62,7 +62,7 @@ public class PrintVisitor implements Visitor {
 		
 	}
 	
-	public int print() {
+	public void print() {
 		System.out.print(p);
 	}
 	
