@@ -1,60 +1,29 @@
 package kwicTest;
 
-import org.junit.*;
-import kwic.base.BaseStopWord;
-
-import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+import kwic.base.BaseStopWord;
 
 public class BaseStopWordTest {
 
 	@Test
-	public void testGetLineSize() {
-		BaseStopWord bs = new BaseStopWord();
-		ArrayList<String> line = new ArrayList<String>(Arrays.asList(new String("Refactoring delta-oriented product lines to "
-				+ "enforce guidelines for efficient type-checking").split(" ")));
+	public void testFilterLines() {
+		ArrayList<ArrayList<String>> lines = new ArrayList<ArrayList<String>>();
+		lines.add(new ArrayList<String>(Arrays.asList(new String("Refinement-based testing of delta-oriented product lines").split(" "))));
+		lines.add(new ArrayList<String>(Arrays.asList(new String("testing of delta-oriented product lines / Refinement-based").split(" "))));
+		lines.add(new ArrayList<String>(Arrays.asList(new String("of delta-oriented product lines / Refinement-based testing").split(" "))));
+		lines.add(new ArrayList<String>(Arrays.asList(new String("delta-oriented product lines / Refinement-based testing of").split(" "))));
+		lines.add(new ArrayList<String>(Arrays.asList(new String("product lines / Refinement-based testing of delta-oriented").split(" "))));
+		lines.add(new ArrayList<String>(Arrays.asList(new String("lines / Refinement-based testing of delta-oriented product").split(" "))));
+		lines.add(new ArrayList<String>(Arrays.asList(new String("/ Refinement-based testing of delta-oriented product lines").split(" "))));
 
-		assertEquals(8, bs.getLine(line).size());
-	}
-	
-	@Test
-	public void testGetLine() {
 		BaseStopWord bs = new BaseStopWord();
-		ArrayList<String> line = new ArrayList<String>(Arrays.asList(new String("Refactoring delta-oriented product lines to "
-				+ "enforce guidelines for efficient type-checking").split(" ")));
-		
-		ArrayList<String> swline = new ArrayList<String>(Arrays.asList(new String("Refactoring delta-oriented product lines "
-				+ "enforce guidelines efficient type-checking").split(" ")));
-		
-		assertEquals(swline, bs.getLine(line));
-	}
-	
-	@Test
-	public void testGetAllLinesSize() {
-		BaseStopWord bs = new BaseStopWord();
-		ArrayList<ArrayList<String>> lines = new ArrayList<ArrayList<String>>();
-		lines.add(new ArrayList<String>(Arrays.asList(new String("Delta-oriented test case prioritization for integration testing of software product lines").split(" "))));
-		lines.add(new ArrayList<String>(Arrays.asList(new String("Towards incremental model slicing for delta-oriented software product lines").split(" "))));
-		lines.add(new ArrayList<String>(Arrays.asList(new String("Row types for delta-oriented programming").split(" "))));
-		
-		assertEquals(3, bs.getAllLines(lines).size());
-	}
-	
-	@Test
-	public void testGetAllLines() {
-		BaseStopWord bs = new BaseStopWord();
-		ArrayList<ArrayList<String>> lines = new ArrayList<ArrayList<String>>();
-		lines.add(new ArrayList<String>(Arrays.asList(new String("Delta-oriented test case prioritization for integration testing of software product lines").split(" "))));
-		lines.add(new ArrayList<String>(Arrays.asList(new String("Towards incremental model slicing for delta-oriented software product lines").split(" "))));
-		lines.add(new ArrayList<String>(Arrays.asList(new String("Row types for delta-oriented programming").split(" "))));
-		
-		ArrayList<ArrayList<String>> swlines = new ArrayList<ArrayList<String>>();
-		swlines.add(new ArrayList<String>(Arrays.asList(new String("Delta-oriented test case prioritization integration testing software product lines").split(" "))));
-		swlines.add(new ArrayList<String>(Arrays.asList(new String("Towards incremental model slicing delta-oriented software product lines").split(" "))));
-		swlines.add(new ArrayList<String>(Arrays.asList(new String("Row types delta-oriented programming").split(" "))));
-		
-		assertEquals(swlines, bs.getAllLines(lines));
+
+		assertEquals(5, bs.filterLines(lines).size());
 	}
 	
 	@Test

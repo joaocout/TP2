@@ -16,7 +16,7 @@ public class BaseCircularShiftTest {
 		
 		ArrayList<ArrayList<String>> lines = bcs.getShiftedWords(line);
 		
-		assertEquals(8, lines.size());
+		assertEquals(10, lines.size());
 	}
 	
 	@Test
@@ -40,7 +40,7 @@ public class BaseCircularShiftTest {
 		
 		ArrayList<ArrayList<String>> lines = bcs.getShiftedWords();
 		
-		assertEquals(8, lines.size());
+		assertEquals(10, lines.size());
 	}
 	
 	@Test

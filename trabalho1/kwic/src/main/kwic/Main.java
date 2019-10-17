@@ -15,11 +15,13 @@ public class Main {
 		
 		CircularShift cs = (CircularShift) context.getBean("circular-shift");
 		
+		StopWord sw = (StopWord) context.getBean("stopword");
+		
 		Alphabetizing al = (Alphabetizing) context.getBean("alphabetizing");
 		
 		Output bo = (Output) context.getBean("output");
 		
-		bo.run(al.getAlphabetizedArray(cs.getShiftedWords(in.getLines())));
+		bo.run(al.getAlphabetizedArray(sw.filterLines(cs.getShiftedWords(in.getLines()))));
 	}
 
 }

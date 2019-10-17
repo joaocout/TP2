@@ -32,29 +32,19 @@ public class BaseStopWord implements StopWord {
 		}
 	}
 	
-	public ArrayList<String> getLine(ArrayList<String> line) {
-		this.getFromFile();
-		ArrayList<String> ret = new ArrayList<String>();
-		for(String l : line) {
-			if(!this.isStopWord(l))
-				ret.add(l);
-		}
-		
-		return ret;
-	}
-	
-	public ArrayList<ArrayList<String>> getAllLines(ArrayList<ArrayList<String>> lines) {
-		this.getFromFile();
-		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
-		for(ArrayList<String> l1 : lines) {
-			res.add(this.getLine(l1));
-		}
-		return res;
-	}
-	
 	public boolean isStopWord(String str) {
 		if(this.swlist.size() == 0)
 			this.getFromFile();
 		return (this.swlist.contains(str.toLowerCase()));
+	}
+	
+	public ArrayList<ArrayList<String>> filterLines(ArrayList<ArrayList<String>> shifted_lines) {
+		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
+		for(ArrayList<String> l : shifted_lines) {
+			if(!this.isStopWord(l.get(0)) && !l.get(0).equals("/")) { // se keyword for stop word, ignora
+				res.add(new ArrayList<String>(l));
+			}
+		}
+		return res;
 	}
 }
