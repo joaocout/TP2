@@ -1,5 +1,5 @@
 f=require("fs")
 r=new Map()
 b=f.readFileSync("stopwords.txt", "utf-8").split("\n")
-a=f.readFileSync("input.txt", "utf-8").split("\n").forEach(s=>s.split(" ").map(t=>!b.includes(t)&&(r.get(t)?r.set(t,r.get(t)+1):r.set(t,1))))
+a=f.readFileSync("input.txt", "utf-8").split("\n").forEach(s=>s.split(" ").map(t=> { t=t.toLowerCase().replace(/[^a-zA-Z]+/g, ''); !b.includes(t)&&(r.get(t)?r.set(t,r.get(t)+1):r.set(t,1)) }))
 l=[...r.entries()].sort((c,d)=>d[1]-c[1]).map((v)=>{console.log(`${v[0]} - ${v[1]}`)})
