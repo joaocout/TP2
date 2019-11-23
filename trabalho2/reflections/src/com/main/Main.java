@@ -4,18 +4,17 @@ import com.reflections.*;
 
 public class Main {
 
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+    public static void main(String[] args){
+        DataManager data = new DataManager();
+        data.read_input("resources/input.txt");
+        data.read_stopwords("resources/stopwords.txt");
 
-        Text_Data in = new Text_Data("resources/input.txt");
-        ReflectiveStopWords rsw = new ReflectiveStopWords("resources/stopwords.txt");
+        ReflectiveStopWords rsw = new ReflectiveStopWords();
         ReflectiveCounter rc = new ReflectiveCounter();
         ReflectiveOutput ro = new ReflectiveOutput();
 
-        in.readfile(); //leitura do arquivo
-        rsw.readfile(); //leitura do arquivo
-
-        rsw.removeStopWords(in);
-        rc.count(in);
-        ro.show(in);
+        rsw.removeStopWords(data);
+        rc.count(data);
+        ro.show_counter(data);
     }
 }

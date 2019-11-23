@@ -1,13 +1,13 @@
 package com.reflections;
 
-import com.main.Text_Data;
+import com.main.DataManager;
 
 import java.util.ArrayList;
 import java.lang.reflect.*;
 
 public class ReflectiveCounter {
 
-    public void count(Text_Data in) {
+    public void count(DataManager in) {
         Class cls = in.getClass();
 
         Field field_text = null;
