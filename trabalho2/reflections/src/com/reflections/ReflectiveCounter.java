@@ -1,13 +1,21 @@
 package com.reflections;
 
-import com.main.DataManager;
-
 import java.util.ArrayList;
 import java.lang.reflect.*;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class ReflectiveCounter {
 
-    public void count(DataManager in) {
+    private void reverse (int[] a, int size){
+        for(int i = 0; i<size/2; i++){
+            int temp = a[i];
+            a[i] = a[size-i-1];
+            a[size-i-1] = temp;
+        }
+    }
+
+    public void count(Object in) {
         Class cls = in.getClass();
 
         Field field_text = null;
@@ -50,6 +58,16 @@ public class ReflectiveCounter {
             index++;
         }
 
+        /*words.sort(new Comparator<Object>() {
+            @Override
+            public int compare(Object a, Object b) {
+                return count[words.indexOf(b)] - count[words.indexOf(a)];
+            }
+        });
+
+        Arrays.sort(count);
+        reverse(count, words.size());*/
+
         try {
             field_count.set(in, count);
             field_words.set(in, words);
@@ -58,6 +76,7 @@ public class ReflectiveCounter {
             System.err.println("Field isn't accessible");
             e.printStackTrace();
         }
+
     }
 
 }

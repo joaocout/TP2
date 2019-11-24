@@ -12,6 +12,14 @@ public class DataManager {
     private ArrayList<String> words; //armazena as palavras individualmente
     private int[] count; //armazena a frequencia de cada palavra
 
+    //remove todas as "palavras" de size menor que 2
+    private void normalize(ArrayList<String> a){
+        for(int i = 0; i<a.size(); i++){
+            if(a.get(i).length() < 2){
+                a.remove(i);
+            }
+        }
+    }
 
     //separa todas as palavras do arquivo em strings dentro de arrays
     public void read_input(String input_filename){
@@ -21,8 +29,10 @@ public class DataManager {
             text = new ArrayList<>();
             String line = buff.readLine();
             while(line!=null){
-                line = line.replaceAll("[(){}<>,.;!?]", "");
+                line = line.toLowerCase();
+                line = line.replaceAll("[^a-zA-Z0-9]+", " ");
                 ArrayList<String> words_in_line = new ArrayList<>(Arrays.asList(line.split(" ")));
+                normalize(words_in_line);
                 text.add(words_in_line);
                 line = buff.readLine();
             }

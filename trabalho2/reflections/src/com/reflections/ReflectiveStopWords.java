@@ -1,13 +1,11 @@
 package com.reflections;
 
-import com.main.DataManager;
-
 import java.util.ArrayList;
 import java.lang.reflect.*;
 
 public class ReflectiveStopWords {
 
-    public void removeStopWords(DataManager in) {
+    public void removeStopWords(Object in) {
         Class cls = in.getClass();
 
         Field field_text = null;

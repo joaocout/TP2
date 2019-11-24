@@ -1,13 +1,11 @@
 package com.reflections;
 
-import com.main.DataManager;
-
 import java.util.ArrayList;
 import java.lang.reflect.*;
 
 public class ReflectiveOutput {
 
-    public void show_counter(DataManager in){
+    public void show_counter(Object in){
         Class cls = in.getClass();
 
         Field field_words = null;
