@@ -2,41 +2,34 @@ package com.reflections;
 
 import java.util.ArrayList;
 import java.lang.reflect.*;
+import com.util.Pair;
 
 public class ReflectiveOutput {
 
     public void show_counter(Object in){
         Class cls = in.getClass();
 
-        Field field_words = null;
-        Field field_count = null;
+        Field field_word_frequency = null;
         try {
-            field_words = cls.getDeclaredField("words");
-            field_count = cls.getDeclaredField("count");
+            field_word_frequency = cls.getDeclaredField("word_frequency");
         }
         catch (NoSuchFieldException e) {
             System.err.println("Field not found");
             e.printStackTrace();
         }
-        field_count.setAccessible(true);
-        field_words.setAccessible(true);
+        field_word_frequency.setAccessible(true);
 
-        ArrayList<String> words = null;
-        int[] count = null;
+        ArrayList<Pair<String,Integer>> word_frequency = null;
         try {
-            words = (ArrayList<String>) field_words.get(in);
-            count = (int[]) field_count.get(in);
-
+            word_frequency = (ArrayList<Pair<String, Integer>>) field_word_frequency.get(in);
         }
         catch (IllegalAccessException e) {
             System.err.println("Field isn't accessible");
             e.printStackTrace();
         }
 
-        int index = 0;
-        for(String word : words){
-            System.out.println(word + " = " + count[index]);
-            index++;
+        for(Pair<String,Integer> word : word_frequency){
+            System.out.println(word.getFirst() + " = " + word.getSecond());
         }
     }
 

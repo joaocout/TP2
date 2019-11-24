@@ -2,8 +2,8 @@ package com.reflections;
 
 import java.util.ArrayList;
 import java.lang.reflect.*;
-import java.util.Arrays;
 import java.util.Comparator;
+import com.util.Pair;
 
 public class ReflectiveCounter {
 
@@ -19,20 +19,17 @@ public class ReflectiveCounter {
         Class cls = in.getClass();
 
         Field field_text = null;
-        Field field_words = null;
-        Field field_count = null;
+        Field field_word_frequency = null;
         try{
             field_text = cls.getDeclaredField("text");
-            field_words = cls.getDeclaredField("words");
-            field_count = cls.getDeclaredField("count");
+            field_word_frequency = cls.getDeclaredField("word_frequency");
         }
         catch (NoSuchFieldException e){
             System.err.println("Field not found");
             e.printStackTrace();
         }
         field_text.setAccessible(true);
-        field_words.setAccessible(true);
-        field_count.setAccessible(true);
+        field_word_frequency.setAccessible(true);
 
         ArrayList<ArrayList<String>> text = null;
         try {
@@ -58,20 +55,20 @@ public class ReflectiveCounter {
             index++;
         }
 
-        /*words.sort(new Comparator<Object>() {
+        ArrayList<Pair<String,Integer>> result = new ArrayList<>();
+        for(int i = 0; i < words.size(); i++){
+            result.add(new Pair (words.get(i), count[i]));
+        }
+
+        result.sort(new Comparator<Pair<String, Integer>>() {
             @Override
-            public int compare(Object a, Object b) {
-                return count[words.indexOf(b)] - count[words.indexOf(a)];
+            public int compare(Pair<String, Integer> a, Pair<String, Integer> b) {
+                return b.getSecond() - a.getSecond();
             }
         });
 
-        Arrays.sort(count);
-        reverse(count, words.size());*/
-
         try {
-            field_count.set(in, count);
-            field_words.set(in, words);
-
+            field_word_frequency.set(in, result);
         } catch (IllegalAccessException e) {
             System.err.println("Field isn't accessible");
             e.printStackTrace();

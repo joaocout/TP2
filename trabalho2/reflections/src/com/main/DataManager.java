@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import com.util.Pair;
 
 public class DataManager {
 
     private ArrayList<ArrayList<String>> text; //matriz que armazena todas as palavras
     private ArrayList<String> stopwords; //array que armazena as stop words
-    private ArrayList<String> words; //armazena as palavras individualmente
-    private int[] count; //armazena a frequencia de cada palavra
+    private ArrayList<Pair<String,Integer>> word_frequency;
 
     //remove todas as "palavras" de size menor que 2
     private void normalize(ArrayList<String> a){
